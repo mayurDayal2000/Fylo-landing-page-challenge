@@ -1,0 +1,92 @@
+:root {
+  --main-padding: 24px;
+  --main-logo-img: 80px;
+  --nav-li-size: 12px;
+  --nav-li-margin: 24px;
+}
+
+/* Header styles */
+header {
+  width: 100%;
+  padding: var(--main-padding);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 5px;
+}
+
+img[alt="Flyo logo"] {
+  width: var(--main-logo-img);
+  height: auto;
+  cursor: pointer;
+}
+
+.nav-section ul {
+  list-style: none;
+}
+
+.nav-section li {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: var(--nav-li-size);
+  line-height: 14px;
+  color: var(--very_dark_blue);
+  padding-block: 5px;
+  cursor: pointer;
+
+  display: inline;
+  margin-right: var(--nav-li-margin);
+}
+
+.nav-section li:last-child {
+  margin-right: 0;
+}
+
+/* Screen with min-width of 700px */
+@media (min-width: 700px) {
+  header {
+    padding: calc(var(--main-padding) + 20.5px) calc(var(--main-padding) + 25px);
+  }
+
+  img[alt="Flyo logo"] {
+    width: calc(var(--main-logo-img) + 43px);
+  }
+
+  .nav-section li {
+    font-size: calc(var(--nav-li-size) + 2px);
+    margin-right: calc(var(--nav-li-margin) + 17px);
+  }
+}
+
+/* Screen with min-width of 998px */
+@media (min-width: 998px) {
+  header {
+    padding: calc(var(--main-padding) + 41px) calc(var(--main-padding) + 50px);
+  }
+
+  img[alt="Flyo logo"] {
+    width: calc(var(--main-logo-img) + 86px);
+  }
+
+  .nav-section li {
+    font-size: calc(var(--nav-li-size) + 4px);
+    margin-right: calc(var(--nav-li-margin) + 34px);
+  }
+}
+
+/* For larger screens */
+@media (min-width: 1594px) {
+  header {
+    padding: 6.6vw 6.2vw;
+  }
+
+  img[alt="Flyo logo"] {
+    width: 15vw;
+  }
+
+  .nav-section li {
+    font-size: 1.2vw;
+    margin-right: 4.2vw;
+  }
+}
