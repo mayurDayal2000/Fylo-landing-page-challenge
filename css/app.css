@@ -15,6 +15,10 @@
   font-family: "Open Sans";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Header styles */
 header {
   width: 100%;
@@ -37,16 +41,20 @@ img[alt="Flyo logo"] {
 }
 
 .nav-section li {
-  font-family: "Raleway";
-  font-weight: 400;
-  font-size: var(--nav-li-size);
-  line-height: 14px;
-  color: #07043b;
   padding-block: 5px;
   cursor: pointer;
 
   display: inline;
   margin-right: var(--nav-li-margin);
+}
+
+.nav-section li > a {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: var(--nav-li-size);
+  line-height: 14px;
+  color: #07043b;
+  text-decoration: none;
 }
 
 .nav-section li:last-child {
@@ -412,8 +420,11 @@ footer ul {
   }
 
   .nav-section li {
-    font-size: calc(var(--nav-li-size) + 2px);
     margin-right: calc(var(--nav-li-margin) + 17px);
+  }
+
+  .nav-section li > a {
+    font-size: calc(var(--nav-li-size) + 2px);
   }
 
   .top-section {
@@ -544,8 +555,11 @@ footer ul {
   }
 
   .nav-section li {
-    font-size: calc(var(--nav-li-size) + 4px);
     margin-right: calc(var(--nav-li-margin) + 34px);
+  }
+
+  .nav-section li > a {
+    font-size: calc(var(--nav-li-size) + 4px);
   }
 
   .top-section {
@@ -781,8 +795,11 @@ footer ul {
   }
 
   .nav-section li {
-    font-size: 1.2vw;
     margin-right: 4.2vw;
+  }
+
+  .nav-section li > a {
+    font-size: 1.2vw;
   }
 
   .top-section {
@@ -944,4 +961,44 @@ footer ul {
   .contact-menu li {
     column-gap: 1vw;
   }
+}
+
+/* added animation */
+main > * {
+  animation: fade-in-right 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s both;
+}
+
+.mid-section {
+  animation: fade-in-left 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s both;
+}
+
+@keyframes fade-in-right {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+form button {
+  transition: background-color 0.3s ease-in;
+}
+
+footer svg,
+footer a {
+  transition: all 0.3s ease-in;
 }
